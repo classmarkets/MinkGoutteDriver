@@ -31,20 +31,6 @@ class GoutteDriver extends BrowserKitDriver
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function setBasicAuth($user, $password)
-    {
-        if (false === $user) {
-            $this->getClient()->resetAuth();
-
-            return;
-        }
-
-        $this->getClient()->setAuth($user, $password);
-    }
-
-    /**
      * Gets the Goutte client.
      *
      * The method is overwritten only to provide the appropriate return type hint.
@@ -54,15 +40,6 @@ class GoutteDriver extends BrowserKitDriver
     public function getClient()
     {
         return parent::getClient();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function reset()
-    {
-        parent::reset();
-        $this->getClient()->resetAuth();
     }
 
     /**
